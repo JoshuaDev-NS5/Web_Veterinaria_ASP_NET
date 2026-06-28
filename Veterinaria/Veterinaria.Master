@@ -46,7 +46,7 @@
             </ul>
 
             <div id="navbar-right">
-                <a href="#" id="btn-cerrar-sesion"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesion</a>
+                <a href="Login.aspx" id="btn-cerrar-sesion"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesion</a>
             </div>
         </nav>
 
@@ -77,11 +77,12 @@
                     </button>
                     <ul class="sidebar-submenu">
                         <li><a href="ConsVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                        <li><a href="Consultas/Historial_de_Mascota.aspx"><i class="fa-solid fa-paw"></i>Historial de Mascotas</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="fa-solid fa-user"></i> Usuarios</a></li>
                 <li class="sidebar-divider"></li>
-                <li><a href="#" class="sidebar-cerrar"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesion</a></li>
+                <li><a href="Login.aspx" class="sidebar-cerrar"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesion</a></li>
             </ul>
         </div>
 

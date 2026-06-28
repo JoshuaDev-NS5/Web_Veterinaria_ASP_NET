@@ -70,13 +70,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consultas\Historial_de_Mascota.aspx" />
     <Content Include="CSS\DemoCSS.css" />
+    <Content Include="CSS\Login.css" />
+    <Content Include="files\fondo_vet.mp4" />
     <Content Include="imagenes\Img1.png" />
     <Content Include="imagenes\modern-animal-pet-logo-template-free-vector-Photoroom.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\Historial_de_Mascota.aspx.cs">
+      <DependentUpon>Historial_de_Mascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\Historial_de_Mascota.aspx.designer.cs">
+      <DependentUpon>Historial_de_Mascota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,6 +102,13 @@
     </Compile>
     <Compile Include="Veterinaria.Master.designer.cs">
       <DependentUpon>Veterinaria.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
