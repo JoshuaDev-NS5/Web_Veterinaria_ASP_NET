@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -68,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\DemoCSS.css" />
+    <Content Include="imagenes\Img1.png" />
     <Content Include="imagenes\modern-animal-pet-logo-template-free-vector-Photoroom.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="Web.config" />
@@ -83,6 +87,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Veterinaria.Master.cs">
       <DependentUpon>Veterinaria.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Veterinaria.Master.designer.cs">
       <DependentUpon>Veterinaria.Master</DependentUpon>

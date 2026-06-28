@@ -5,140 +5,117 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-
-    <!--Link de iconos-->
     <script src="https://kit.fontawesome.com/748344fffa.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link href="~/CSS/DemoCSS.css" rel="stylesheet" type="text/css" />    
+    <link href="CSS/DemoCSS.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="Cabecera" runat="server" />
 </head>
 <body>
     <form id="form1" runat="server">
-         <!-- Overlay oscuro (solo móvil) contenedor del sidebar cuando esta en movil -->
-        <div id="overlay-sidebar"></div>
 
-        <!-- Barra superior que se activa en resolucioin móvil desde tableta -->
-        <div id="topbar-mobile" style="display:none; align-items:center; gap:12px;
-            background:#1e3a1e; padding:10px 16px; position:sticky; top:0; z-index:1030;">
-            <button id="btn-toggle-sidebar" type="button"
-                    style="background:none; border:none; color:#a8d5a2; font-size:22px; cursor:pointer;"
-                    aria-label="Abrir menú">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="imagen" style="width: 35px;">
-                <img style="width: 100%;" src="~/imagenes/modern-animal-pet-logo-template-free-vector-Photoroom.png"/>
-            </div>
-            <span style="color:#a8d5a2;  font-size:1.8rem; font-family: 'Times New Roman', Times, serif;">INUPETS</span>
-        </div>
-
-        <div class="container-fluid " id="Padre">
-            <div class="row vh-100">
-                <div class="col-lg-2 col-sm-3 p-0 " id="sidebar">
-                    <!--Contenedor del logo-->
-                    <div id="nav_logo" class=" text-center py-2">
-
-                        <!-- Botón cerrar (solo móvil) -->
-                        <button id="btn-cerrar-sidebar" type="button"
-                                class="d-lg-none"
-                                style=" background:none; border:none; color:#a8d5a2;
-                                    font-size:20px; cursor:pointer;"
-                                aria-label="Cerrar menú">
-                            <i class="fa-solid fa-bars"></i>
-                        </button>
-
-                        <div class="imagen">
-                            <img src="~/imagenes/modern-animal-pet-logo-template-free-vector-Photoroom.png"/>
-                        </div>
-                        <div class="titulo">
-                            <h1>INUPETS</h1>
-                        </div>
-                    </div>
-                    <!--Contenedor del navegador-->
-                    <div id="navegador">
-                        <ul class="navbar-nav">
-                            <li class="link">
-                                <div id="activo" class="active">
-                                    <i class="fa-solid fa-house"></i>
-                                    <a class="nav-link" href="">Inicio</a>
-                                </div>
-                            </li>
-                            <li class=" link">
-                                <div id="activo" class="">
-                                    <i class="fa-solid fa-user"></i>
-                                    <a class="nav-link" href="">Usuarios</a>
-                                </div>
-                            </li>
-                            <li class=" link">
-                                <i class="fa-solid fa-suitcase"></i>
-                                <a class="nav-link" href="">Mantenimiento</a>
-                            </li>
-
-                            <li class=" link ">
-                                <i class="fa-solid fa-book-open"></i>
-                                <a class="nav-link" href="">Consultas</a>
-                            </li>
-
-                            <li class="link">
-                                <i class="fa-solid fa-arrow-left"></i>
-                                <a class="nav-link" href="">Cerrar Sesión</a>
-                            </li>
-   
-                        </ul>
-                    </div>
-                    <!--Contenedor de usuario actual-->
-                    <div id="Usuario_actual">
-                        <div id="logo_contenedor" >
-                            <div id="logo_usuario" class="rounded-circle">
-                                <p>US</p>
-                            </div>
-                        </div>
-                        <div id="usuario">
-                            <div id="datos">
-                                <p class="m-0" id="nombre">Usuario Demo</p>
-                                <p class="m-0" id="correo">usario@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-sm-12 p-0 " id="Informacion" >
-                    <div id="titulo_consulta">
-                        <h1 class="mb-0">INICIO - PRESENTACION</h1> 
-                    </div>
-                    <div id="Consulta">
-                        <asp:ContentPlaceHolder ID="Contenido_De_consulta" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
+        <!-- NAVBAR -->
+        <nav id="navbar-top">
+            <div id="navbar-left">
+                <button id="btn-hamburguesa" type="button" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div id="navbar-brand">
+                    <img src="imagenes/modern-animal-pet-logo-template-free-vector-Photoroom.png" alt="logo INUPETS" />
+                    <span>INUPETS</span>
                 </div>
             </div>
+
+            <ul id="navbar-links">
+                <li><a href="Inicio.aspx"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li class="dropdown-nav">
+                    <a href="#"><i class="fa-solid fa-suitcase"></i> Mantenimiento <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                    <ul class="dropdown-menu-nav">
+                        <li><a href="VeterinarioMAN01.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                        <li><a href="MascotaMAN01.aspx"><i class="fa-solid fa-paw"></i> Mascotas</a></li>
+                        <li><a href="PersonalMAN01.aspx"><i class="fa-solid fa-user-tie"></i> Personal</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-nav">
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Consultas <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                    <ul class="dropdown-menu-nav">
+                        <li><a href="ConsVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-user"></i> Usuarios</a></li>
+            </ul>
+
+            <div id="navbar-right">
+                <a href="#" id="btn-cerrar-sesion"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesion</a>
+            </div>
+        </nav>
+
+        <!-- OVERLAY -->
+        <div id="overlay-mobile"></div>
+
+        <!-- SIDEBAR -->
+        <div id="sidebar-mobile">
+            <div id="sidebar-mobile-header">
+                <span>Hola, Usuario!</span>
+                <button id="btn-cerrar-mobile" type="button"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul id="sidebar-mobile-links">
+                <li><a href="Inicio.aspx"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li>
+                    <button class="sidebar-toggle-submenu" type="button">
+                        <i class="fa-solid fa-suitcase"></i> Mantenimiento <i class="fa-solid fa-chevron-right fa-xs ms-auto"></i>
+                    </button>
+                    <ul class="sidebar-submenu">
+                        <li><a href="VeterinarioMAN01.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                        <li><a href="MascotaMAN01.aspx"><i class="fa-solid fa-paw"></i> Mascotas</a></li>
+                        <li><a href="PersonalMAN01.aspx"><i class="fa-solid fa-user-tie"></i> Personal</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="sidebar-toggle-submenu" type="button">
+                        <i class="fa-solid fa-book-open"></i> Consultas <i class="fa-solid fa-chevron-right fa-xs ms-auto"></i>
+                    </button>
+                    <ul class="sidebar-submenu">
+                        <li><a href="ConsVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-user"></i> Usuarios</a></li>
+                <li class="sidebar-divider"></li>
+                <li><a href="#" class="sidebar-cerrar"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesion</a></li>
+            </ul>
         </div>
+
+        <!-- CONTENIDO -->
+        <div id="contenido-principal">
+            <asp:ContentPlaceHolder ID="Contenido_De_consulta" runat="server" />
+        </div>
+
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script>
         (function () {
-            var sidebar = document.getElementById('sidebar');
-            var overlay = document.getElementById('overlay-sidebar');
-            var btnToggle = document.getElementById('btn-toggle-sidebar');
-            var btnCerrar = document.getElementById('btn-cerrar-sidebar'); 
+            var btnHamb = document.getElementById('btn-hamburguesa');
+            var btnCerrar = document.getElementById('btn-cerrar-mobile');
+            var overlay = document.getElementById('overlay-mobile');
+            var sidebar = document.getElementById('sidebar-mobile');
 
-            function abrirSidebar() {
-                sidebar.classList.add('sidebar-open');
-                overlay.classList.add('show');
-            }
+            function abrirMenu() { sidebar.classList.add('open'); overlay.classList.add('show'); }
+            function cerrarMenu() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }
 
-            function cerrarSidebar() {
-                sidebar.classList.remove('sidebar-open');
-                overlay.classList.remove('show');
-            }
+            btnHamb.addEventListener('click', abrirMenu);
+            btnCerrar.addEventListener('click', cerrarMenu);
+            overlay.addEventListener('click', cerrarMenu);
 
-            btnToggle.addEventListener('click', function () {
-                sidebar.classList.contains('sidebar-open')
-                    ? cerrarSidebar()
-                    : abrirSidebar();
+            document.querySelectorAll('.sidebar-toggle-submenu').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var sub = this.nextElementSibling;
+                    var icon = this.querySelector('.fa-chevron-right');
+                    sub.classList.toggle('open');
+                    if (icon) icon.style.transform = sub.classList.contains('open') ? 'rotate(90deg)' : '';
+                });
             });
-            btnCerrar.addEventListener('click', cerrarSidebar);
-            overlay.addEventListener('click', cerrarSidebar);
         })();
     </script>
 </body>
