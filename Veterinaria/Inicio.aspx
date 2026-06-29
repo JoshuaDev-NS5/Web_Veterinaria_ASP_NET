@@ -13,7 +13,7 @@
         <div class="hero-content">
             <h1>Todo lo que tu mascota necesita, en un solo lugar</h1>
             <p>Atencion veterinaria de calidad disponible para el cuidado integral de tus animales. Profesionales especializados listos para ayudarte.</p>
-            <a href="ConsVeterinario.aspx" class="hero-btn">
+            <a href="Consultas/consVeterinario.aspx" class="hero-btn">
                 <i class="fa-solid fa-stethoscope"></i> Ver nuestros veterinarios
             </a>
         </div>

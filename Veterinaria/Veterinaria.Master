@@ -21,7 +21,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div id="navbar-brand">
-                    <img src="imagenes/modern-animal-pet-logo-template-free-vector-Photoroom.png" alt="logo INUPETS" />
+                    <img src="imagenes/modern-animal-pet-logo-template-free-vector-Photoroom.png" alt="logo INUPETS" runat="server"/>
                     <span>INUPETS</span>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <li class="dropdown-nav">
                     <a href="#"><i class="fa-solid fa-book-open"></i> Consultas <i class="fa-solid fa-chevron-down fa-xs"></i></a>
                     <ul class="dropdown-menu-nav">
-                        <li><a href="ConsVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                        <li><a href="Consultas/consVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="fa-solid fa-user"></i> Usuarios</a></li>
@@ -76,7 +76,7 @@
                         <i class="fa-solid fa-book-open"></i> Consultas <i class="fa-solid fa-chevron-right fa-xs ms-auto"></i>
                     </button>
                     <ul class="sidebar-submenu">
-                        <li><a href="ConsVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
+                        <li><a href="Consultas/consVeterinario.aspx"><i class="fa-solid fa-stethoscope"></i> Veterinarios</a></li>
                         <li><a href="Consultas/Historial_de_Mascota.aspx"><i class="fa-solid fa-paw"></i>Historial de Mascotas</a></li>
                     </ul>
                 </li>

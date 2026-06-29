@@ -470,3 +470,414 @@
         flex: 1 1 140px;
     }
 }
+
+/*----------------------------------------------------Historial de mascotas------------------------*/
+/* ── Página Historial ─────────────────────────────── */
+.hm-page {
+    padding: 32px 40px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 64px);
+}
+
+/* Encabezado de página */
+.hm-page-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+    .hm-page-header .hm-icon-header {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: #047248;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #fff;
+        flex-shrink: 0;
+    }
+
+    .hm-page-header h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+    }
+
+    .hm-page-header p {
+        font-size: 0.88rem;
+        color: #6c757d;
+        margin: 2px 0 0;
+    }
+
+/* ── Buscador ─────────────────────────────────────── */
+.hm-search-bar {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+    .hm-search-bar .hm-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+        min-width: 180px;
+    }
+
+    .hm-search-bar label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #495057;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .hm-search-bar input[type="text"],
+    .hm-search-bar input[type="date"],
+    .hm-search-bar .form-control {
+        border: 1.5px solid #dee2e6;
+        border-radius: 8px;
+        padding: 9px 14px;
+        font-size: 0.9rem;
+        color: #1a1a1a;
+        background: #f8f9fa;
+        transition: border-color 0.2s;
+        height: 40px;
+    }
+
+        .hm-search-bar input[type="text"]:focus,
+        .hm-search-bar input[type="date"]:focus,
+        .hm-search-bar .form-control:focus {
+            border-color: #047248;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(4,114,72,0.10);
+        }
+
+    .hm-search-bar .hm-separator {
+        width: 1px;
+        height: 40px;
+        background: #dee2e6;
+        flex-shrink: 0;
+    }
+
+/* Botones de acción */
+.hm-btn-consultar {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 20px;
+    border-radius: 8px;
+    background: #047248;
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 40px;
+}
+
+    .hm-btn-consultar:hover {
+        background: #035c39;
+        color: #fff;
+    }
+
+.hm-btn-filtrar {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 20px;
+    border-radius: 8px;
+    background: #fff;
+    color: #047248;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 2px solid #047248;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 40px;
+}
+
+    .hm-btn-filtrar:hover {
+        background: #f0fdf4;
+    }
+
+.hm-btn-limpiar {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    color: #6c757d;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1.5px solid #dee2e6;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 40px;
+}
+
+    .hm-btn-limpiar:hover {
+        background: #e9ecef;
+        color: #495057;
+    }
+
+.hm-btn-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ── Layout principal: ficha izq + tabla der ─────── */
+.hm-main-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* ── Ficha de mascota ─────────────────────────────── */
+.hm-ficha {
+    width: 280px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+
+.hm-ficha-header {
+    background: #047248;
+    padding: 20px 20px 16px;
+    text-align: center;
+}
+
+.hm-ficha-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 auto 10px;
+    border: 3px solid rgba(255,255,255,0.4);
+}
+
+.hm-ficha-nombre {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.hm-ficha-id {
+    font-size: 0.78rem;
+    color: #c8ecd0;
+    margin-top: 2px;
+}
+
+.hm-ficha-body {
+    padding: 16px 20px;
+}
+
+.hm-dato-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 8px;
+}
+
+    .hm-dato-row:last-child {
+        border-bottom: none;
+    }
+
+.hm-dato-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.hm-dato-valor {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-align: right;
+}
+
+.hm-badge-tipo {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: #e8f5ee;
+    color: #047248;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.hm-empty-state {
+    text-align: center;
+    padding: 32px 16px;
+}
+
+    .hm-empty-state .hm-empty-icon {
+        font-size: 2.5rem;
+        color: #dee2e6;
+        margin-bottom: 10px;
+    }
+
+    .hm-empty-state p {
+        font-size: 0.85rem;
+        color: #adb5bd;
+    }
+
+/* ── Sección de tabla ─────────────────────────────── */
+.hm-tabla-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.hm-tabla-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+
+.hm-tabla-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 12px;
+}
+
+    .hm-tabla-card-header h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+        .hm-tabla-card-header h3 i {
+            color: #047248;
+        }
+
+/* Estilos para el GridView */
+.hm-tabla-section .hm-tabla-card #<%=grvHistorialMascotas.ClientID% > {
+    width: 100%;
+}
+
+.hm-gridview {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+    .hm-gridview th {
+        background: #f8f9fa;
+        color: #495057;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 12px 16px;
+        border-bottom: 2px solid #dee2e6;
+        white-space: nowrap;
+    }
+
+    .hm-gridview td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #1a1a1a;
+        vertical-align: middle;
+    }
+
+    .hm-gridview tr:last-child td {
+        border-bottom: none;
+    }
+
+    .hm-gridview tbody tr:hover {
+        background: #f0fdf4;
+    }
+
+.hm-tabla-empty {
+    text-align: center;
+    padding: 48px 24px;
+}
+
+    .hm-tabla-empty .hm-tabla-empty-icon {
+        font-size: 3rem;
+        color: #dee2e6;
+        margin-bottom: 12px;
+    }
+
+    .hm-tabla-empty p {
+        color: #adb5bd;
+        font-size: 0.9rem;
+    }
+
+    .hm-tabla-empty strong {
+        display: block;
+        font-size: 1rem;
+        color: #6c757d;
+        margin-bottom: 4px;
+    }
+
+/* Mensaje de error / info */
+.labelErrores {
+    font-size: 0.85rem;
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 900px) {
+    .hm-page {
+        padding: 20px 16px;
+    }
+
+    .hm-main-layout {
+        flex-direction: column;
+    }
+
+    .hm-ficha {
+        width: 100%;
+    }
+
+    .hm-search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .hm-search-bar .hm-separator {
+            display: none;
+        }
+
+    .hm-btn-actions {
+        justify-content: flex-start;
+    }
+}
